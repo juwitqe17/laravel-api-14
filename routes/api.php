@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\API\KategoriController;
 use App\Http\Controllers\API\ProductController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/user', function (Request $request) {
@@ -16,3 +16,8 @@ Route::put('/product/{product}', [ProductController::class, 'update'])->name('pr
 Route::delete('/product/{product}', [ProductController::class, 'destroy'])->name('product.destroy');
 
 //Route::apiResource('/products', ProductController::class);
+
+Route::get('/kategori', [KategoriController::class, 'index'])->name('kategori');
+Route::post('/kategori', [KategoriController::class, 'store'])->name('kategori.store');
+Route::put('/kategori/{kategori}', [KategoriController::class, 'update'])->name('kategori.update');
+Route::delete('/kategori/{kategori}', [KategoriController::class, 'delete'])->name('kategori.delete');
